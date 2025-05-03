@@ -1,6 +1,11 @@
 # CoreDNS-Directory-Structure-Working-
 CoreDNS Directory Structure (Working)
 
+sudo systemctl stop systemd-resolved
+sudo systemctl disable systemd-resolved
+rm /etc/resolv.conf
+echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" > /etc/resolv.conf
+cat /etc/resolv.conf
 
 docker run -d \
   -p 53:53/udp \
